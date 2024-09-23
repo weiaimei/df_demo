@@ -1,11 +1,7 @@
 <template>
   <div class="container">
-    <div class="header-menu">
-      <span class="header-menu-title">时空路网一张图</span>
-    </div>
-    <Tool></Tool>
     <div id="cesiumContainer"></div>
-    <!-- <div class="left">
+    <div class="left">
       <div class="text">标会工具</div>
       <draw-tool></draw-tool>
       <UpFile @addJson="importMeasuring"></UpFile>
@@ -22,28 +18,26 @@
     <div class="right">
       <div class="text">边坡</div>
       <side-slope></side-slope>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
-// import drawTool from "@/components/drawTool.vue";
-// import MeasureTool from "@/components/MeasureTool.vue";
-// import UpFile from "@/components/UpFile.vue";
-// import resetRoad from "@/components/resetRoad.vue";
-// import backgroundData from "@/components/BackgroundData.vue";
-// import SideSlope from "@/components/SideSlope.vue";
-import Tool from "./Tool.vue";
+import drawTool from "@/components/drawTool.vue";
+import MeasureTool from "@/components/MeasureTool.vue";
+import UpFile from "@/components/UpFile.vue";
+import resetRoad from "@/components/resetRoad.vue";
+import backgroundData from "@/components/BackgroundData.vue";
+import SideSlope from "@/components/SideSlope.vue";
 let measureToolDown;
 export default {
   name: "Home",
   components: {
-    // drawTool,
-    // MeasureTool,
-    // UpFile,
-    // resetRoad,
-    // backgroundData,
-    // SideSlope,
-    Tool,
+    drawTool,
+    MeasureTool,
+    UpFile,
+    resetRoad,
+    backgroundData,
+    SideSlope,
   },
   data() {
     return {};
@@ -80,25 +74,10 @@ export default {
   },
 };
 </script>
-<style scoped>
-.header-menu {
-  height: 50px;
-  width: 100%;
-  background: #2b46a7;
-  color: #fff;
-}
-.header-menu-title {
-  display: inline-block;
-  font-size: 24px;
-  line-height: 50px;
-  margin-left: 20px;
-}
-</style>
-<style scoped>
+<style>
 .container {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 #cesiumContainer {
   width: 100%;
