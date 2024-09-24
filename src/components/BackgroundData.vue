@@ -108,16 +108,16 @@ export default {
         } else if (this.selectLayer.datatype === "dom") {
           viewer.camera.flyTo({
             destination: Cesium.Cartesian3.fromDegrees(
-              111.376399,
-              22.496896,
+              113.266673573,
+              22.053641056,
               300
             ),
           });
         } else if (this.selectLayer.datatype === "designRaster") {
           viewer.camera.flyTo({
             destination: Cesium.Cartesian3.fromDegrees(
-              111.64068606,
-              22.70010139,
+              112.872307732,
+              22.02814342,
               20000
             ),
           });

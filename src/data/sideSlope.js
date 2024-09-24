@@ -27,7 +27,7 @@ let dataList = [
     isShow: false,
     userId: "a4785bfe-7498-4a40-8f70-fadbad304729",
     thumbnail: null,
-    extent: [111.36, 22.45, 111.39, 22.53],
+    extent: [113.243634888, 22.0486139, 113.266673573, 22.053641056],
     info: {
       url: "http://localhost:8003/tilesets/dom/{z}/{x}/{y}.png",
       maximumLevel: 20,
@@ -45,7 +45,7 @@ let dataList = [
     isShow: false,
     userId: "a4785bfe-7498-4a40-8f70-fadbad304729",
     thumbnail: null,
-    extent: [113.401134, 22.70118805, 113.63540833, 22.8085079],
+    extent: [113.401134, 22.70118805, 113.266375434, 22.053369711],
     info: {
       url: "http://localhost:8003/tilesets/b3dm/tileset.json",
       maximumScreenSpaceError: 1,
