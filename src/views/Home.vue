@@ -24,7 +24,7 @@
 <script>
 import drawTool from "@/components/drawTool.vue";
 import MeasureTool from "@/components/MeasureTool.vue";
-import UpFile from "@/components/UpFile.vue";
+import UpFile from "@/components/son/UpFile.vue";
 import resetRoad from "@/components/resetRoad.vue";
 import backgroundData from "@/components/BackgroundData.vue";
 import SideSlope from "@/components/SideSlope.vue";
