@@ -348,178 +348,85 @@ export default {
       let reporter = "张三";
       let base64Url = await this.canvasToBase64(viewer.scene.canvas, 550, 250);
 
-      const htmlContent = `<!DOCTYPE HTML>
+      const htmlContent = `<!DOCTYPE html>
 <html>
   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <meta http-equiv="Content-Style-Type" content="text/css">
-      <meta name="generator" content="Aspose.Words for .NET 15.1.0.0">
-      <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="Aspose.Words for .NET 15.1.0.0" />
+    <title></title>
   </head>
   <body>
     <div>
-      <h1 style="font-size:22pt; line-height:115%; margin:24pt 0pt 0pt; page-break-after:avoid; page-break-inside:avoid; text-align:center">
-        <span style="font-family:宋体; font-size:22pt; font-weight:normal">边坡巡检问题报告</span>
+      <h1
+        style="
+          font-size: 22pt;
+          line-height: 115%;
+          margin: 24pt 0pt 0pt;
+          page-break-after: avoid;
+          page-break-inside: avoid;
+          text-align: center;
+        "
+      >
+        <span
+          style="
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 60px;
+          "
+          >关于某路段边坡巡检的问题报告</span
+        >
       </h1>
-      <p style="margin:0pt 0pt 0pt 18pt"><span style="font-family:宋体; font-size:12pt">&nbsp;</span></p>
-      <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
-        <tbody>
-          <tr style="height:32pt">
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:75.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">报告类型</span></p>
-            </td>
-            <td colspan="4" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:381.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">边坡冲刷问题报告</span></p>
-            </td>
-          </tr>
-          <tr style="height:32pt">
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:65.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">报告名称</span></p>
-            </td>
-            <td colspan="4" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:381.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">K44 石窖二号桥(左侧)线外边坡巡查报告2024/08/29</span></p>
-            </td>
-          </tr>
-          <tr style="height:20pt">
-            <td rowspan="3" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:75.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">主体信息</span></p>
-            </td>
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:75.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">报告人</span></p>
-            </td>
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:94.2pt">
-              <p style="margin:0pt">
-                <span style="font-family:宋体; font-size:12pt">${reporter}</span>
-              </p>
-            </td>
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:75.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">联系电话</span></p>
-            </td>
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:132.2pt">
-              <p style="margin:0pt">
-                <span style="font-family:宋体; font-size:12pt">${phone}</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="height:20pt">
-            <td colspan="1" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:147.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">桩号</span></p>
-            </td>
-            <td colspan="3" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:223.2pt">
-              <p style="margin:0pt">
-                <span style="font-family:宋体; font-size:12pt">${KZhuang}</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="height:20pt">
-            <td colspan="1" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:147.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">报告时间</span></p>
-            </td>
-            <td colspan="3" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:223.2pt">
-              <p style="margin:0pt">
-                <span style="font-family:宋体; font-size:12pt">${time}</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="height:140.65pt">
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:61.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">报告内容</span></p>
-            </td>
-            <td colspan="4" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:381.2pt">
-              <span style="font-family:宋体; font-size:12pt">边坡是山区地质灾害的重要源头，为了及时发现和解决边坡隐患，确保人民群众的生命和财产安全，对边坡的隐患进行排查。</span>
-              <p style="margin:0pt 0pt 0pt 18pt"><span style="font-family:宋体; font-size:12pt">&nbsp;</span></p>
-              <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
-                <tbody>
-                  <tr>
-                    <td style="border-bottom-color:#000000; border-bottom-style:dotted; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#bfbfbf; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:10.5pt; font-weight:bold; line-height: 14pt;">位置</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:dotted; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#bfbfbf; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:10.5pt; font-weight:bold">边坡形态</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:dotted; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:10.5pt; font-weight:bold">地质情况</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:dotted; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:10.5pt; font-weight:bold">植被覆盖率</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:dotted; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:10.5pt; font-weight:bold">隐患数量</span>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#bfbfbf; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:dotted; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:10.5pt;">广东省茂名市云茂高速公路K43+914</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#bfbfbf; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:dotted; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:12pt">边坡为侧斜坡，坡度较陡</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:dotted; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:12pt">边坡由砂岩和粉质黏土层组成</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:dotted; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:12pt">80%</span>
-                      </p>
-                    </td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#bfbfbf; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:dotted; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:top; width:105.35pt">
-                      <p style="margin:0pt; text-align:center">
-                        <span style="font-family:宋体; font-size:12pt">8</span>
-                      </p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <p style="margin:0pt 0pt 0pt 18pt"><span style="font-family:宋体; font-size:12pt">&nbsp;</span></p>
-              <img src="${base64Url}" alt="" width: "200"; height:"150">  
-              <p style="margin:0pt 0pt 0pt 18pt"><span style="font-family:宋体; font-size:12pt">&nbsp;</span></p>
-            </td>
-          </tr>
-          <tr style="height:25.15pt">
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:61.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">结论</span></p>
-            </td>
-            <td colspan="4" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:381.2pt">
-              <p style="line-height:28.6pt; margin:0pt 0pt 1pt; text-align:left">
-                <span style="font-family:宋体; font-size:12pt">斜坡面有明显的冲刷痕迹，局部表层土壤被冲刷，需要进行安全隐患的防护</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="height:25.15pt">
-            <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:61.2pt">
-              <p style="margin:0pt"><span style="font-family:宋体; font-size:12pt">建议</span></p>
-            </td>
-            <td colspan="4" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:381.2pt">
-              <p style="line-height:28.6pt; margin:0pt 0pt 1pt; text-align:left">
-                <span style="font-family:宋体; font-size:12pt">对边坡进行定期监测，建立监测系统；加大排水设施的建设，确保边坡能够及时排水；加强灾害知识宣传，提高防护意识</span>
-              </p>
-            </td>
-          </tr>
-          <tr style="height:0pt">
-            <td style="width:72pt; border:none"></td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="line-height:28.6pt; margin:0pt 0pt 1pt 180pt; text-align:justify; text-indent:36pt"><span style="font-family:宋体; font-size:15pt">&nbsp;</span></p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="font-size: 20px; font-weight: bold; line-height: 60px"
+          >一、报告名称:</span
+        >
+        <span style="font-family: 宋体; font-size: 12pt">
+           K43+914+500_填平区_刘屋互通CK0+207~308左侧
+          排水沟堵塞2024/05/24</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="font-size: 20px; font-weight: bold; line-height: 60px"
+          >二、主要信息</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="text-indent: 2em; margin: 10px 0"
+          >桩号：&nbsp;${KZhuang}</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="text-indent: 2em; margin: 10px 0"
+          >报告时间：&nbsp;${time}</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="font-size: 20px; font-weight: bold; line-height: 60px"
+          >三、报告内容</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="text-indent: 2em; margin: 10px 0"
+          >巡视对象： K43+914+500_填平区_刘屋互通CK0+207~308左侧
+          严重程度：严重
+          巡查时间：2024年09月03日
+        
+         </span
+        >
+       <p style="text-align: center;margin-bottom: 20px">
+    <img src="${base64Url}" alt="" style='width:600px'></p>
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="font-size: 20px; font-weight: bold; line-height: 60px"
+          >四、建议：加大力度清理，确保能及时进行排水，减少不必要的损坏。</span
+        >
+      </p>
     </div>
   </body>
-</html>`;
+</html>
+`;
 
       this.exportHtmlToWord(htmlContent);
     },
