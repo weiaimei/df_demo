@@ -89,6 +89,7 @@ export default {
           name: "收费站",
           anchor: "POINT(112.9579219741 22.0163717172)",
         },
+        { id: 104 },
       ];
       this.ZDsID = [];
       let entityArr = [];

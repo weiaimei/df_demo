@@ -179,7 +179,7 @@ export default {
           heading: Number.parseFloat(+50),
           pitch: Number.parseFloat(-54.5),
           roll: Number.parseFloat(+0.0),
-          showFrustum: true,
+          showFrustum: false,
           horizontal: 30,
           isEclosion: true,
           vertical: (Number.parseFloat(2160) / Number.parseFloat(3840)) * 100,
@@ -196,13 +196,13 @@ export default {
         };
       } else {
         params = {
-          url: require("../assets/image/8.mp4"),
+          url: "http://192.168.2.85/test/%E8%A7%86%E9%A2%91/video/8.mp4",
           id: "2",
           alpha: 0.7,
           heading: Number.parseFloat(110),
           pitch: Number.parseFloat(-55),
           roll: Number.parseFloat(10),
-          showFrustum: true,
+          showFrustum: false,
           horizontal: 20,
           isEclosion: true,
           vertical: (Number.parseFloat(2160) / Number.parseFloat(3840)) * 100,
@@ -297,15 +297,16 @@ export default {
         entity.info = item.info;
         this.entities.device.push(entity);
       });
-      window.viewer.flyTo({
+      window.viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(
-          113.221216344,
-          23.979189129,
-          34.69
+          113.221263167,
+          23.978080651,
+          1000
         ),
       });
     },
     mapClick() {
+      console.log(1111);
       if (!picking) {
         picking = new tqsdk.scene.Interaction.Picking(window.viewer);
       }
@@ -480,9 +481,9 @@ export default {
         );
         window.viewer.camera.setView({
           destination: Cesium.Cartesian3.fromDegrees(
-            111.37421633,
-            22.49424891,
-            1000
+            113.204445121,
+            23.97592431,
+            46.27
           ),
         });
       }
