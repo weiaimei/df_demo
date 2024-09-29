@@ -7,7 +7,7 @@ let plottingList = [
         pixelSize: 20,
         color: "YELLOW",
         outlineColor: "YELLOW",
-        outlineWidth: 1,
+        outlineWidth: 2,
         disableDepthTestDistance: 1e11,
         // distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
       },

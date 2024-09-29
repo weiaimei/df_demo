@@ -43,6 +43,10 @@ export default {
       });
       let layer = new tqsdk.layer.LayerCollection(window.viewer);
       layer.add(tqsdk.layer.syGDLayer.addVectorImage());
+      //加载火星地形
+      layer.add(tqsdk.layer.syTerrainLayer.add({
+        url:"http://data.marsgis.cn/terrain",
+      }));
       // window.viewer.scene.screenSpaceCameraController.enableTilt = false; //禁止相机倾斜
     },
   },
@@ -72,6 +76,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* display: none; */
 }
 .header-title {
   display: inline-block;

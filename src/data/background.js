@@ -46,7 +46,7 @@ let dataList = [
     extent: [113.401134, 22.70118805, 113.266375434, 22.053369711],
     info: {
       url: "http://localhost:8003/tilesets/b3dm/tileset.json",
-      maximumScreenSpaceError: 16,
+      maximumScreenSpaceError: 1,
     },
     //调节图层是色调，饱和度，亮度，对比度等
     colorAdjust: null,
@@ -61,7 +61,7 @@ let dataList = [
     // extent: [113.401134, 22.70118805, 113.63540833, 22.8085079],
     info: {
       url: "http://localhost:8003/tilesets/points/tileset.json",
-      maximumScreenSpaceError: 16,
+      maximumScreenSpaceError: 1,
     },
     //调节图层是色调，饱和度，亮度，对比度等
     colorAdjust: undefined,

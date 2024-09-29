@@ -20,12 +20,13 @@ let measureToolList = [
       label: {
         text: "测量",
         font: "14px sans-serif",
-        outlineColor: Cesium.Color.WHITE,
+        outlineColor: Cesium.Color.BLUE,
+        fillColor: Cesium.Color.BLUE,
         outlineWidth: 2,
         pixelOffset: new Cesium.Cartesian2(0, -30),
         disableDepthTestDistance: 1e11,
         // disableDepthTestDistance: Number.MAX_VALUE,
-        showBackground: true,
+        showBackground: false,
         // backgroundColor: Cesium.Color.RED,
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.3),
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
@@ -35,7 +36,7 @@ let measureToolList = [
 
   {
     name: "表面积测量",
-    type: "areaSurface",
+    type: "area",
     style: {
       endpoint: {
         pixelSize: 1,
@@ -53,6 +54,7 @@ let measureToolList = [
         // backgroundColor: Cesium.Color.RED,
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
+        // show:false,
       },
       polygon: {
         material: Cesium.Color.BLUE.withAlpha(0.8),
@@ -88,7 +90,7 @@ let measureToolList = [
         pixelOffset: new Cesium.Cartesian2(0, -20),
         disableDepthTestDistance: Number.MAX_VALUE,
         showBackground: true,
-        backgroundColor: Cesium.Color.RED,
+        // backgroundColor: Cesium.Color.RED,
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 5e4),
       },
