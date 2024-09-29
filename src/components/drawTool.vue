@@ -137,6 +137,7 @@ export default {
             scale: 1.5,
             // 是否显示
             show: true,
+            disableDepthTestDistance: 1e11,
           },
           label: {
             text: arr[l].name,
@@ -149,6 +150,7 @@ export default {
             heightReference: Cesium.HeightReference.NONE,
             verticalOrigin: Cesium.VerticalOrigin.TOP,
             pixelOffset: new Cesium.Cartesian2(10, -25),
+            disableDepthTestDistance: 1e11,
           },
         });
         //存入管理数据
