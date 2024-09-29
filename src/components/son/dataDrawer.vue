@@ -1,7 +1,7 @@
 <template>
   <el-drawer
     class="data-drawer"
-    title="边坡巡检"
+    title="边坡查巡"
     :visible.sync="drawer"
     :direction="direction"
     :modal="false"
@@ -11,8 +11,9 @@
   >
     <div class="inspect-data">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="照片" name="photo">
+        <el-tab-pane  name="photo">
           <div class="photo">
+          
             <el-image
               class="show-imgae"
               v-for="(item, index) in photoList"
@@ -23,9 +24,8 @@
               :preview-src-list="srcList"
             ></el-image>
           </div>
-        </el-tab-pane>
-        <el-tab-pane label="视频" name="video">
           <div class="video">
+          
             <el-image
               class="show-imgae"
               v-for="(item, index) in videoList"
@@ -38,14 +38,15 @@
             <i class="el-icon-video-play"></i>
           </div>
         </el-tab-pane>
+        <!-- <el-tab-pane label="视频" name="video"> </el-tab-pane> -->
       </el-tabs>
     </div>
-    <div v-if="videoDialog">
+    <!-- <div v-if="videoDialog">
       <Video
         :dialogVisible="videoDialog"
         :videoInfo="videoInfo"
         @closeDialog="closeDialog"
-      />
+      /> -->
     </div>
   </el-drawer>
 </template>
