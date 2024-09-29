@@ -76,6 +76,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* display: none; */
 }
 .header-title {
   display: inline-block;
