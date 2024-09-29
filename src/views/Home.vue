@@ -56,8 +56,8 @@ export default {
 </script>
 <style scoped>
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 #cesiumContainer {
   width: 100%;
@@ -88,9 +88,13 @@ export default {
   width: 300px;
   left: 25px;
   top: 60px;
-
   z-index: 3;
+  height: 300px;
+  overflow: scroll;
 }
-.left-side {
+.left-auto-scrollbar {
+  width: 300px;
+  height: 300px;
+  overflow: auto; /* 根据需要自动显示滚动条 */
 }
 </style>

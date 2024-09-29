@@ -8,7 +8,6 @@
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b"
-          style="height: 200px; overflow-y: auto"
         >
           <el-submenu index="1">
             <template slot="title">
