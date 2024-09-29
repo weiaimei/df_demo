@@ -42,7 +42,7 @@ export default {
         requestRenderMode: false,
       });
       let layer = new tqsdk.layer.LayerCollection(window.viewer);
-      layer.add(tqsdk.layer.syBingLayer.addImage());
+      layer.add(tqsdk.layer.syGDLayer.addVectorImage());
       // window.viewer.scene.screenSpaceCameraController.enableTilt = false; //禁止相机倾斜
     },
   },
