@@ -81,7 +81,7 @@ export default {
       let thumbnailBase64 = await tqsdk.utils.screenShot.canvasToBase64(
         viewer.scene.canvas
       );
-      tqsdk.utils.download.downloadIamge(thumbnailBase64);
+      tqsdk.utils.download.downloadIamge(thumbnailBase64,"下载","JPG");
     },
     //桩号
     showZD(ZD) {
