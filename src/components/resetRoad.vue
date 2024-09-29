@@ -154,7 +154,7 @@ export default {
         positions: positions,
         animationType: 1,
         speedType: 0,
-        speed: 5, //速度
+        speed: 4, //速度
         name: "小汽车", //车牌
         hpr: {
           heading: 0,
@@ -169,6 +169,60 @@ export default {
             Cesium.Math.toRadians(-10), //倾斜角度
             10
           ),
+        },
+        popupStyle: {
+          label: {
+            text: ``,
+            font: "15px Helvetica",
+            pixelOffset: new Cesium.Cartesian2(0, -50),
+            scaleByDistance: new Cesium.NearFarScalar(1.5e2, 1.0, 1e4, 0),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(
+              0,
+              1e5
+            ),
+            showBackground: false,
+            backgroundColor: Cesium.Color.GREEN.withAlpha(0.5),
+            fillColor: Cesium.Color.RED,
+          },
+          billboard: {
+            image: "./img/1.png",
+            disableDepthTestDistance: 1e11,
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(
+              0,
+              1e7
+            ),
+            scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
+            width: 64,
+            height: 70,
+            pixelOffset: new Cesium.Cartesian2(-5, 0),
+          },
+        },
+        pathStyle: {
+          material: Cesium.Color.BLACK,
+          width: 5,
+        },
+        entpointStyle: {
+          polyline: {
+            material: new Cesium.PolylineDashMaterialProperty({
+              color: Cesium.Color.YELLOW,
+              dashLength: 20,
+            }),
+            width: 2,
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(
+              0,
+              1e4
+            ),
+            show: false,
+          },
+          point: {
+            pixelSize: 10,
+            color: new Cesium.Color(0 / 255, 0 / 255, 255 / 255, 1),
+            distanceDisplayCondition: new Cesium.DistanceDisplayCondition(
+              0,
+              1e4
+            ),
+            show: false,
+          },
         },
       };
       init.add(params);
