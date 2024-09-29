@@ -183,6 +183,7 @@ export default {
             showBackground: false,
             backgroundColor: Cesium.Color.GREEN.withAlpha(0.5),
             fillColor: Cesium.Color.RED,
+            show:false,
           },
           billboard: {
             image: "./img/1.png",
