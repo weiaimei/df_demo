@@ -200,6 +200,8 @@ export default {
     },
     removeAll() {
       init && init.removeAll();
+      viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+      viewer.trackedEntity = undefined;
     },
   },
 };
