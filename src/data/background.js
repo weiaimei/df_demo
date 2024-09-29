@@ -18,7 +18,7 @@ let dataList = [
     },
   },
   {
-    name: "CAD设计图纸",
+    name: "CAD图纸",
     type: "designRaster",
     id: "64d6de1a-9761-4dc7-a6f9-b71dd17771f44741",
     isShow: false,
@@ -37,7 +37,7 @@ let dataList = [
         `,
   },
   {
-    name: "倾斜三维模型",
+    name: "实景三维模型",
     type: "threeDTile",
     id: "64d6de1a-9761-4dc7-a6f9-b722221dd17771f44743",
     isShow: false,

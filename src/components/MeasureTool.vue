@@ -1,19 +1,49 @@
 <template>
   <div>
-    <a-button
-      type="primary"
-      class="design-btn"
-      v-for="(item, index) in toolList"
-      :key="index"
-      @click="apply(item)"
-      >{{ item.name }}</a-button
-    >
-    <a-button type="danger" class="design" @click="removeAll">清除</a-button>
+    <el-row>
+      <el-col>
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <el-submenu index="1">
+            <template slot="title">
+              <span>测量功能</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item
+                index="1-1"
+                v-for="(item, index) in toolList"
+                :key="index"
+                @click="apply(item)"
+                >{{ item.name }}</el-menu-item
+              >
+              <el-menu-item @click="removeAll" index="1-2">清除</el-menu-item>
+              <el-menu-item @click="exportImg" index="1-3"
+                >导出图片</el-menu-item
+              >
+              <el-menu-item index="1-5">
+                <UpFile @addJson="importMeasuring"></UpFile>
+              </el-menu-item>
+              <el-menu-item index="1-4">
+                <export-file></export-file
+              ></el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+        </el-menu>
+      </el-col>
+    </el-row>
   </div>
 </template>
 <script>
 import measureToolList from "@/data/measure.js";
+import UpFile from "./son/UpFile.vue";
+import exportFile from "./son/exportFile.vue";
 let measureTool;
+let platting;
 let toolList = measureToolList.map((item) => {
   return {
     name: item.name,
@@ -21,6 +51,10 @@ let toolList = measureToolList.map((item) => {
   };
 });
 export default {
+  components: {
+    UpFile,
+    exportFile,
+  },
   data() {
     return {
       type: "",
@@ -46,6 +80,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      platting = new tqsdk.widgets.Plotting(window.viewer);
       measureTool = new tqsdk.widgets.MeasureTool(window.viewer);
     });
   },
@@ -111,6 +146,24 @@ export default {
         this.volume.progress = 0;
       }
       this.type = "";
+    },
+    // //下载所有
+    // downloadAll() {
+    //   // measureTool.downloadAll();
+
+    // },
+    //导出图片
+    async exportImg() {
+      let thumbnailBase64 = await tqsdk.utils.screenShot.canvasToBase64(
+        viewer.scene.canvas
+      );
+      tqsdk.utils.download.downloadIamge(thumbnailBase64);
+    },
+    //导出
+    importMeasuring(v) {
+      platting.importJson(v).then((data) => {
+        data.flyTo();
+      });
     },
   },
 };

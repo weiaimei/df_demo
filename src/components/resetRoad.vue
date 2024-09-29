@@ -1,25 +1,42 @@
 <template>
   <div>
-    <a-button type="primary" class="design-btn" @click="openCarRoad"
-      >行车信息</a-button
-    >
-    <a-button type="primary" class="design-btn" @click="drawCarRoute"
-      >绘制路线</a-button
-    >
-    <a-button type="primary" class="design-btn" @click="firstCarView">
-      第一视角</a-button
-    >
-    <a-button type="primary" class="design-btn" @click="threeCarView"
-      >第三视角</a-button
-    >
-    <a-button type="primary" class="design-btn" @click="removeAll"
-      >清空</a-button
-    >
+    <el-row>
+      <el-col>
+        <el-menu
+          default-active="2"
+          class="el-menu"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <el-submenu index="1">
+            <template slot="title">
+              <span>路径还原功能</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item @click="openCarRoad" index="1-1"
+                >行车信息</el-menu-item
+              >
+              <el-menu-item @click="drawCarRoute" index="1-2"
+                >绘制路线</el-menu-item
+              >
+              <el-menu-item @click="firstCarView" index="1-3"
+                >第一视角</el-menu-item
+              >
+              <el-menu-item @click="threeCarView" index="1-4"
+                >第三视角</el-menu-item
+              >
+              <el-menu-item @click="removeAll" index="1-5">清空</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+        </el-menu>
+      </el-col>
+    </el-row>
   </div>
 </template>
 <script>
 import linString from "@/data/line.js";
-
+import roadLine from "@/data/road.js";
 let init;
 export default {
   data() {
@@ -62,6 +79,17 @@ export default {
           name: "终点",
           anchor: "POINT(113.0311272839 22.0002253674)",
         },
+        {
+          id: 103,
+          name: "服务区",
+          anchor: "POINT(112.9081867957 22.0104903945)",
+        },
+        {
+          id: 104,
+          name: "收费站",
+          anchor: "POINT(112.9579219741 22.0163717172)",
+        },
+        { id: 104 },
       ];
       this.ZDsID = [];
       let entityArr = [];
@@ -82,11 +110,11 @@ export default {
                 0,
                 1e6
               ),
-              backgroundColor: Cesium.Color.fromCssColorString("red"),
+              backgroundColor: Cesium.Color.fromCssColorString("#04A4B4"),
             },
             verticalLine: {
               material: new Cesium.PolylineDashMaterialProperty({
-                color: Cesium.Color.fromCssColorString("#E27F21"),
+                color: Cesium.Color.fromCssColorString("RED"),
                 dashLength: 20,
               }),
               distanceDisplayCondition: new Cesium.DistanceDisplayCondition(
@@ -102,10 +130,23 @@ export default {
         entityArr.push(entity);
       }
     },
-    async drawCarRoute() {
-      let positions = await init.addLines();
-      this.addAnimation(positions);
+
+    drawCarRoute() {
+      // let positions = await init.addLines();
+
+      // console.log(positions, "位置");
+      // let newRoadData = [];
+      // for (let i = 0; i < roadLine.length; i++) {
+      //   let lon = roadLine[i].longitude;
+      //   let lat = roadLine[i].latitude;
+      //   let hei = roadLine[i].height;
+      //   let data = Cesium.Cartesian3.fromDegrees(lon, lat, hei);
+      //   newRoadData.push(data);
+      //   console.log(newRoadData, "2222");
+      //  }
+      this.addAnimation(roadLine);
     },
+
     addAnimation(positions) {
       let params = {
         id: Cesium.createGuid(),
@@ -150,7 +191,7 @@ export default {
         init.animation._viewAngle = {
           type: 1,
           offset: new Cesium.HeadingPitchRange(
-            Cesium.Math.toRadians(180), //水平角度
+            Cesium.Math.toRadians(90), //水平角度
             Cesium.Math.toRadians(-45), //倾斜角度
             50
           ),

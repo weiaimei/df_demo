@@ -1,13 +1,13 @@
 <template>
   <el-drawer
     class="data-drawer"
-    title="巡检数据"
+    title="边坡巡检"
     :visible.sync="drawer"
     :direction="direction"
     :modal="false"
     :before-close="handleClose"
     :wrapperClosable="false"
-    size="18%"
+    size="30%"
   >
     <div class="inspect-data">
       <el-tabs v-model="activeName" @tab-click="handleClick">
@@ -119,9 +119,14 @@ export default {
 .show-imgae {
   margin: 5px;
 }
-/* .data-drawer {
- background-color: rgba(3, 78, 145, 0.81) !important;
-} */
+.data-drawer {
+  width: 60%;
+  top: 238px;
+  height: 388px;
+  right: 335px;
+  /* // z-index: 2003; */
+  /* background-color: rgba(3, 78, 145, 0.81) !important; */
+}
 .el-drawer__header,
 .el-tabs__item {
   color: #fff;

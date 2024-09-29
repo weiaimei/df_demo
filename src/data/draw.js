@@ -4,12 +4,12 @@ let plottingList = [
     name: "点",
     style: {
       point: {
-        pixelSize: 12,
-        color: "red",
-        outlineColor: "#ffffff",
-        outlineWidth: 2,
+        pixelSize: 20,
+        color: "YELLOW",
+        outlineColor: "YELLOW",
+        outlineWidth: 1,
         disableDepthTestDistance: 1e11,
-        distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
+        // distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
       },
       label: {
         text: "点",
@@ -20,7 +20,7 @@ let plottingList = [
         disableDepthTestDistance: 1e11,
         showBackground: true,
         backgroundColor: "#04A4B4",
-        scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
+        // scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
         show: false,
       },
     },
@@ -30,9 +30,9 @@ let plottingList = [
     name: "线",
     style: {
       endpoint: {
-        pixelSize: 12,
-        color: "green",
-        outlineColor: "#ffffff",
+        pixelSize: 1,
+        color: "YELLOW",
+        outlineColor: "YELLOW",
         outlineWidth: 2,
         disableDepthTestDistance: 1e11,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
@@ -40,10 +40,10 @@ let plottingList = [
       },
       polyline: {
         // material: "#EEE06C",
-        width: 5,
+        width: 6,
         // depthFailMaterial: "#EEE06C",
-        color: "#EEE06C",
-        depthFailColor: "#EEE06C",
+        color: "YELLOW",
+        depthFailColor: "YELLOW",
         clampToGround: true, //贴地
         close: false,
         type: "Color", //材质类型
@@ -58,7 +58,7 @@ let plottingList = [
     name: "多边形",
     style: {
       polygon: {
-        color: "red",
+        color: "YELLOW",
         type: "Color",
         // image: "/img/Fire.gif",
         // type: "Gif",
@@ -68,9 +68,9 @@ let plottingList = [
         alpha: 0.5,
       },
       endpoint: {
-        pixelSize: 12,
-        color: "red",
-        outlineColor: "#ffffff",
+        pixelSize: 1,
+        color: "YELLOW",
+        outlineColor: "YELLOW",
         outlineWidth: 2,
         disableDepthTestDistance: 1e11,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
@@ -79,8 +79,8 @@ let plottingList = [
       },
       polyline: {
         width: 5,
-        color: "#EEE06C",
-        depthFailColor: "#EEE06C",
+        color: "YELLOW",
+        depthFailColor: "YELLOW",
         clampToGround: true, //贴地
         close: false,
         type: "Color", //材质类型
@@ -104,8 +104,8 @@ let plottingList = [
     name: "图标",
     style: {
       billboard: {
-        color: "#ffffff",
-        image: require("../assets/fire4.png"),
+        color: "YELLOW",
+        image: require("../assets/image/plotting-white.png"),
         disableDepthTestDistance: 1e11,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
@@ -115,16 +115,16 @@ let plottingList = [
         type: "Image",
       },
       label: {
-        text: "火焰",
-        color: "#000000",
+        text: "定位",
+        // color: "YELLOW",
         style: 0,
         font: "14px sans-serif",
-        outlineColor: "#ffffff",
-        outlineWidth: 2,
+        outlineColor: "YELLOW",
+        outlineWidth: 4,
         pixelOffset: new Cesium.Cartesian2(0, -50),
         disableDepthTestDistance: 1e11,
         showBackground: true,
-        backgroundColor: "#04A4B4",
+        // backgroundColor: "YELLOW",
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
         show: true,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),

@@ -1,19 +1,37 @@
 <template>
   <div>
-    <a-button
-      type="primary"
-      @click="addGisData(item)"
-      class="design-btn"
-      v-for="(item, index) in gisDataList"
-      :key="index"
-      >{{ item.name }}</a-button
-    >
-    <a-button type="primary" class="design-btn" @click="changeDataVisible"
-      >隐藏</a-button
-    >
-    <a-button type="primary" class="design-btn" @click="locateData"
-      >定位</a-button
-    >
+    <el-row>
+      <el-col>
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+        >
+          <el-submenu index="1">
+            <template slot="title">
+              <span>地理数据功能</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item
+                index="1-1"
+                @click="addGisData(item)"
+                class="design-btn"
+                v-for="(item, index) in gisDataList"
+                :key="index"
+                >{{ item.name }}
+              </el-menu-item>
+              <img src="../assets/hide.png" alt="" @click="changeDataVisible" />
+              <!-- <el-menu-item @click="changeDataVisible" index="1-2"
+                >隐藏</el-menu-item
+              > -->
+              <!-- <el-menu-item @click="locateData" index="1-3">定位</el-menu-item> -->
+            </el-menu-item-group>
+          </el-submenu>
+        </el-menu>
+      </el-col>
+    </el-row>
   </div>
 </template>
 <script>
@@ -31,7 +49,9 @@ export default {
     });
   },
   destroyed() {
-    init && init.destroyed();
+    if (init) {
+      init && init.destroyed();
+    }
   },
   methods: {
     addGisData(item) {
@@ -108,16 +128,16 @@ export default {
         } else if (this.selectLayer.datatype === "dom") {
           viewer.camera.flyTo({
             destination: Cesium.Cartesian3.fromDegrees(
-              111.376399,
-              22.496896,
-              300
+              126.61217,
+              43.7744,
+              1000
             ),
           });
         } else if (this.selectLayer.datatype === "designRaster") {
           viewer.camera.flyTo({
             destination: Cesium.Cartesian3.fromDegrees(
-              111.64068606,
-              22.70010139,
+              112.872307732,
+              22.02814342,
               20000
             ),
           });
@@ -127,3 +147,4 @@ export default {
   },
 };
 </script>
+<style></style>

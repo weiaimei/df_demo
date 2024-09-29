@@ -27,7 +27,7 @@ let dataList = [
     isShow: false,
     userId: "a4785bfe-7498-4a40-8f70-fadbad304729",
     thumbnail: null,
-    extent: [111.36, 22.45, 111.39, 22.53],
+    extent: [113.243634888, 22.0486139, 113.266673573, 22.053641056],
     info: {
       url: "http://localhost:8003/tilesets/dom/{z}/{x}/{y}.png",
       maximumLevel: 20,
@@ -45,7 +45,7 @@ let dataList = [
     isShow: false,
     userId: "a4785bfe-7498-4a40-8f70-fadbad304729",
     thumbnail: null,
-    extent: [113.401134, 22.70118805, 113.63540833, 22.8085079],
+    extent: [113.401134, 22.70118805, 113.266375434, 22.053369711],
     info: {
       url: "http://localhost:8003/tilesets/b3dm/tileset.json",
       maximumScreenSpaceError: 1,
@@ -57,7 +57,7 @@ let dataList = [
 let photoList = [
   {
     id: 1,
-    name: "云茂边坡",
+    name: "广乐边坡",
     smallThumbnail: require("../assets/image/1_resized.jpg"),
     bigThumbnail: require("../assets/image/1_compressed.jpg"),
     origin: require("../assets/image/1.jpg"),
@@ -76,13 +76,13 @@ let videoList = [
     id: 1,
     name: "东涌立交",
     smallThumbnail: require("../assets/image/3_resized.jpg"),
-    video: require("../assets/image/4.mp4"),
+    video: "http://192.168.2.85/test/%E8%A7%86%E9%A2%91/video/4.mp4",
   },
   {
     id: 2,
     name: "云茂边坡",
     smallThumbnail: require("../assets/image/1_resized.jpg"),
-    video: require("../assets/image/6.mp4"),
+    video: "http://192.168.2.85/test/%E8%A7%86%E9%A2%91/video/6.mp4",
   },
 ];
 
@@ -90,14 +90,14 @@ let deviceList = [
   {
     type: "airPort",
     name: "机场",
-    position: [111.3763796, 22.49855643, 19.4],
+    position: [113.220893317, 23.981223014, 59.05],
     info: {
       name: "机场1",
       number: "4TADKCM001004A",
       state: "在线",
       type: "D2",
       organize: "广州天勤",
-      position: "111.3763796, 22.49855643, 19.4",
+      position: "113.220893317, 23.981223014, 59.05",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -135,14 +135,14 @@ let deviceList = [
   {
     type: "airPort",
     name: "机场",
-    position: [111.37414599, 22.49582899, 16.53],
+    position: [113.220486408, 23.978634173, 35.31],
     info: {
       name: "机场2",
       number: "4TADKCM00K8B0000",
       state: "在线",
       type: "D1",
       organize: "广州天勤",
-      position: "111.37414599, 22.49582899, 16.53",
+      position: "113.220486408,23.978634173,35.31",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -180,7 +180,7 @@ let deviceList = [
   {
     type: "airFly",
     name: "无人机",
-    position: [111.3782354, 22.49855643, 29.4],
+    position: [113.220272, 23.980886, 62],
     info: {
       name: "无人机1",
       number: "1581F5BLD23130010HMR",
@@ -225,14 +225,14 @@ let deviceList = [
   {
     type: "airFly",
     name: "无人机",
-    position: [111.37492354, 22.49582899, 26.53],
+    position: [113.221216344, 23.979189129, 34.69],
     info: {
       name: "无人机2",
       number: "1581F5BLD231300DET45",
       state: "在线",
       type: "M30T",
       organize: "广州天勤",
-      position: "111.37492354, 22.49582899, 26.53",
+      position: "113.221216344,23.979189129,34.69",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -270,7 +270,7 @@ let deviceList = [
   {
     type: "video",
     name: "摄像枪",
-    position: [111.37715933, 22.49577291, 82.29],
+    position: [113.221774461, 23.980514493, 38.7],
     info: {
       name: "K44 海康枪机摄像头1",
       number: "HKSXT001",
@@ -279,7 +279,7 @@ let deviceList = [
       organize: "广州天勤",
       mader: "海康威视",
       time: "2024-08-05 15:12:27",
-      position: "111.37715933, 22.49577291, 82.29",
+      position: "113.221774461,23.980514493,38.7",
     },
     style: {
       billboard: {
@@ -288,8 +288,8 @@ let deviceList = [
         disableDepthTestDistance: 1e11,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
-        width: 64,
-        height: 70,
+        width: 50,
+        height: 50,
         pixelOffset: new Cesium.Cartesian2(-5, 0),
         type: "Image",
         heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
@@ -315,7 +315,7 @@ let deviceList = [
   {
     type: "video",
     name: "摄像枪",
-    position: [111.37537446, 22.49493684, 90.22],
+    position: [113.218508172, 23.979674181, 46.15],
     info: {
       name: "K44 海康枪机摄像头2",
       number: "HKSXT002",
@@ -324,7 +324,7 @@ let deviceList = [
       organize: "广州天勤",
       mader: "海康威视",
       time: "2024-08-05 15:12:27",
-      position: "111.37537446, 22.49493684, 90.22",
+      position: "113.218508172,23.979674181,46.15",
     },
     style: {
       billboard: {
@@ -333,8 +333,8 @@ let deviceList = [
         disableDepthTestDistance: 1e11,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
-        width: 64,
-        height: 70,
+        width: 50,
+        height: 50,
         pixelOffset: new Cesium.Cartesian2(-5, 0),
         type: "Image",
         heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
@@ -360,28 +360,28 @@ let deviceList = [
 ];
 let problemList = [
   {
-    position: [111.37421633, 22.49424891, 93.91],
+    position: [113.290807758, 24.05982688, 22.2],
   },
   {
-    position: [111.37789952, 22.49327126, 244.91],
+    position: [113.291772075, 24.060652971, 24.37],
   },
   {
-    position: [111.37629405, 22.49389171, 201.59],
+    position: [113.292265527, 24.061683554, 26.34],
   },
   {
-    position: [111.3762723, 22.49465183, 154.8],
+    position: [113.292987501, 24.062433149, 38.25],
   },
   {
-    position: [111.37752713, 22.49501913, 151.93],
+    position: [113.293668089, 24.062983517, 49.55],
   },
   {
-    position: [111.37826153, 22.4957098, 136.64],
+    position: [113.29447297, 24.06380792, 35.58],
   },
   {
-    position: [111.37861553, 22.49567437, 154.9],
+    position: [113.288647416, 24.058130991, 24.93],
   },
   {
-    position: [111.37903435, 22.49545222, 184.35],
+    position: [113.293195056, 24.061364146, 45.6],
   },
 ];
 let heatmapoptions = {
@@ -390,9 +390,9 @@ let heatmapoptions = {
   minOpacity: 0,
   blur: 1,
   gradient: {
-    1: "rgb(255,000,000)",
-    0.25: "rgb(000,000,255)",
-    0.55: "rgb(000,255,255)",
+    1: "rgb(65, 255, 111)",
+    0.25: "rgb(255, 236, 112)",
+    0.55: "rgb(254, 80, 114)",
     0.65: "rgb(000,255,000)",
     0.98: "rgb(255,255,000)",
   },
@@ -401,14 +401,39 @@ let heatmapoptions = {
     min: 0,
     max: 255,
     points: [
-      { x: 111.37421633, y: 22.49424891, value: 93.91 },
-      { x: 111.37789952, y: 22.49327126, value: 244.91 },
-      { x: 111.37629405, y: 22.49389171, value: 201.59 },
-      { x: 111.3762723, y: 22.49465183, value: 154.8 },
-      { x: 111.37752713, y: 22.49501913, value: 151.93 },
-      { x: 111.37826153, y: 22.4957098, value: 136.64 },
-      { x: 111.37861553, y: 22.49567437, value: 154.9 },
-      { x: 111.37903435, y: 22.49545222, value: 184.35 },
+      { x: 113.217432367, y: 23.979008469, value: 56.3 },
+      { x: 113.216348166, y: 23.980749651, value: 71.93 },
+      { x: 113.21754245, y: 23.982587486, value: 69.7 },
+      { x: 113.214239014, y: 23.979415019, value: 43.25 },
+      { x: 113.214987224, y: 23.977975338, value: 55.89 },
+      { x: 113.213774281, y: 23.982724605, value: 68.83 },
+      { x: 113.22064519, y: 23.983232215, value: 79.54 },
+      { x: 113.215955278, y: 23.985220489, value: 64.13 },
+      { x: 113.215955278, y: 23.985220489, value: 64.13 },
+      { x: 113.209850714, y: 23.9864335, value: 84.04 },
+      { x: 113.207610206, y: 23.982125154, value: 106.67 },
+      { x: 113.22301445, y: 23.976596164, value: 35.71 },
+      { x: 113.227267839, y: 23.980468512, value: 21.92 },
+      { x: 113.218460802, y: 23.974290179, value: 35.27 },
+      { x: 113.231223033, y: 23.985102145, value: 52.85 },
+      { x: 113.219418247, y: 23.99083337, value: 85.11 },
+      { x: 113.209683644, y: 23.998056618, value: 149.86 },
+      { x: 113.197569825, y: 23.993668086, value: 126.94 },
+      { x: 113.188772407, y: 23.980673893, value: 126.14 },
+      { x: 113.172380213, y: 23.987266197, value: 577.01 },
+      { x: 113.193037981, y: 23.967086401, value: 144.88 },
+      { x: 113.1605724, y: 23.967884179, value: 203.27 },
+      { x: 113.17033185, y: 23.955739892, value: 190.81 },
+      { x: 113.190689848, y: 23.951925132, value: 107.83 },
+      { x: 113.233447729, y: 23.964604379, value: 47.65 },
+      { x: 113.216952834, y: 23.946866252, value: 53.29 },
+      { x: 113.252572084, y: 23.980779502, value: 82.35 },
+      { x: 113.256523112, y: 23.968477356, value: 37.54 },
+      { x: 113.217496444, y: 23.958243725, value: 82.03 },
+      { x: 113.233443798, y: 23.974111508, value: 18.92 },
+      { x: 113.24219929, y: 23.976045678, value: 52.19 },
+      { x: 113.24034354, y: 23.982780595, value: 57.91 },
+      { x: 113.217147381, y: 23.965512042, value: 63.07 },
     ],
   },
   minSamplingNum: 200,
