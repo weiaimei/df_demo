@@ -27,7 +27,7 @@ let dataList = [
     isShow: false,
     userId: "a4785bfe-7498-4a40-8f70-fadbad304729",
     thumbnail: null,
-    extent: [111.36, 22.45, 111.39, 22.53],
+    extent: [113.243634888, 22.0486139, 113.266673573, 22.053641056],
     info: {
       url: "http://localhost:8003/tilesets/dom/{z}/{x}/{y}.png",
       maximumLevel: 20,
@@ -45,7 +45,7 @@ let dataList = [
     isShow: false,
     userId: "a4785bfe-7498-4a40-8f70-fadbad304729",
     thumbnail: null,
-    extent: [113.401134, 22.70118805, 113.63540833, 22.8085079],
+    extent: [113.401134, 22.70118805, 113.266375434, 22.053369711],
     info: {
       url: "http://localhost:8003/tilesets/b3dm/tileset.json",
       maximumScreenSpaceError: 1,
@@ -57,7 +57,7 @@ let dataList = [
 let photoList = [
   {
     id: 1,
-    name: "云茂边坡",
+    name: "广乐边坡",
     smallThumbnail: require("../assets/image/1_resized.jpg"),
     bigThumbnail: require("../assets/image/1_compressed.jpg"),
     origin: require("../assets/image/1.jpg"),
@@ -90,14 +90,14 @@ let deviceList = [
   {
     type: "airPort",
     name: "机场",
-    position: [111.3763796, 22.49855643, 19.4],
+    position: [113.220893317, 23.981223014, 59.05],
     info: {
       name: "机场1",
       number: "4TADKCM001004A",
       state: "在线",
       type: "D2",
       organize: "广州天勤",
-      position: "111.3763796, 22.49855643, 19.4",
+      position: "113.220893317, 23.981223014, 59.05",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -135,14 +135,14 @@ let deviceList = [
   {
     type: "airPort",
     name: "机场",
-    position: [111.37414599, 22.49582899, 16.53],
+    position: [113.220486408, 23.978634173, 35.31],
     info: {
       name: "机场2",
       number: "4TADKCM00K8B0000",
       state: "在线",
       type: "D1",
       organize: "广州天勤",
-      position: "111.37414599, 22.49582899, 16.53",
+      position: "113.220486408,23.978634173,35.31",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -180,7 +180,7 @@ let deviceList = [
   {
     type: "airFly",
     name: "无人机",
-    position: [111.3782354, 22.49855643, 29.4],
+    position: [113.220272, 23.980886, 62],
     info: {
       name: "无人机1",
       number: "1581F5BLD23130010HMR",
@@ -225,14 +225,14 @@ let deviceList = [
   {
     type: "airFly",
     name: "无人机",
-    position: [111.37492354, 22.49582899, 26.53],
+    position: [113.221216344, 23.979189129, 34.69],
     info: {
       name: "无人机2",
       number: "1581F5BLD231300DET45",
       state: "在线",
       type: "M30T",
       organize: "广州天勤",
-      position: "111.37492354, 22.49582899, 26.53",
+      position: "113.221216344,23.979189129,34.69",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -270,7 +270,7 @@ let deviceList = [
   {
     type: "video",
     name: "摄像枪",
-    position: [111.37715933, 22.49577291, 82.29],
+    position: [113.221774461, 23.980514493, 38.7],
     info: {
       name: "K44 海康枪机摄像头1",
       number: "HKSXT001",
@@ -279,7 +279,7 @@ let deviceList = [
       organize: "广州天勤",
       mader: "海康威视",
       time: "2024-08-05 15:12:27",
-      position: "111.37715933, 22.49577291, 82.29",
+      position: "113.221774461,23.980514493,38.7",
     },
     style: {
       billboard: {
@@ -288,8 +288,8 @@ let deviceList = [
         disableDepthTestDistance: 1e11,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
-        width: 64,
-        height: 70,
+        width: 50,
+        height: 50,
         pixelOffset: new Cesium.Cartesian2(-5, 0),
         type: "Image",
         heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
@@ -315,7 +315,7 @@ let deviceList = [
   {
     type: "video",
     name: "摄像枪",
-    position: [111.37537446, 22.49493684, 90.22],
+    position: [113.218508172, 23.979674181, 46.15],
     info: {
       name: "K44 海康枪机摄像头2",
       number: "HKSXT002",
@@ -324,7 +324,7 @@ let deviceList = [
       organize: "广州天勤",
       mader: "海康威视",
       time: "2024-08-05 15:12:27",
-      position: "111.37537446, 22.49493684, 90.22",
+      position: "113.218508172,23.979674181,46.15",
     },
     style: {
       billboard: {
@@ -333,8 +333,8 @@ let deviceList = [
         disableDepthTestDistance: 1e11,
         distanceDisplayCondition: new Cesium.DistanceDisplayCondition(0, 1e7),
         scaleByDistance: new Cesium.NearFarScalar(0, 1, 1e6, 0.5),
-        width: 64,
-        height: 70,
+        width: 50,
+        height: 50,
         pixelOffset: new Cesium.Cartesian2(-5, 0),
         type: "Image",
         heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
@@ -360,28 +360,28 @@ let deviceList = [
 ];
 let problemList = [
   {
-    position: [111.37421633, 22.49424891, 93.91],
+    position: [113.290807758, 24.05982688, 22.2],
   },
   {
-    position: [111.37789952, 22.49327126, 244.91],
+    position: [113.291772075, 24.060652971, 24.37],
   },
   {
-    position: [111.37629405, 22.49389171, 201.59],
+    position: [113.292265527, 24.061683554, 26.34],
   },
   {
-    position: [111.3762723, 22.49465183, 154.8],
+    position: [113.292987501, 24.062433149, 38.25],
   },
   {
-    position: [111.37752713, 22.49501913, 151.93],
+    position: [113.293668089, 24.062983517, 49.55],
   },
   {
-    position: [111.37826153, 22.4957098, 136.64],
+    position: [113.29447297, 24.06380792, 35.58],
   },
   {
-    position: [111.37861553, 22.49567437, 154.9],
+    position: [113.288647416, 24.058130991, 24.93],
   },
   {
-    position: [111.37903435, 22.49545222, 184.35],
+    position: [113.293195056, 24.061364146, 45.6],
   },
 ];
 let heatmapoptions = {

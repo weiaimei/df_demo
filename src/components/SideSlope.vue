@@ -1,48 +1,60 @@
 <template>
   <div>
-    <div>
-      <el-button
-        type="primary"
-        @click="apply(item)"
-        class="design-btn"
-        v-for="(item, index) in dataList"
-        :key="index"
-        >{{ item.name }}</el-button
-      >
-      <el-button type="primary" @click="mapProject(1)" class="design-btn"
-        >照片投射</el-button
-      >
-      <el-button type="primary" @click="mapProject(0)" class="design-btn">
-        视频投射
-      </el-button>
-      <el-button type="danger" @click="remove('data')" class="design-btn">
-        清除
-      </el-button>
-    </div>
-    <div>
-      <el-button type="primary" @click="addDeviceIcon" class="design-btn"
-        >设备分布</el-button
-      >
-      <el-button type="danger" @click="remove('device')" class="design-btn">
-        清除
-      </el-button>
-    </div>
-    <div>
-      <el-button type="primary" @click="showProblem('icon')" class="design-btn">
-        图标
-      </el-button>
-      <el-button
-        type="primary"
-        @click="showProblem('heatmap')"
-        class="design-btn"
-      >
-        热力图
-      </el-button>
-      <el-button type="primary" class="design-btn"> 导出word </el-button>
-      <el-button type="danger" @click="remove('problem')" class="design-btn">
-        清除
-      </el-button>
-    </div>
+    <el-row>
+      <el-col>
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          background-color="#545c64"
+          text-color="#fff"
+          active-text-color="#ffd04b"
+          style="height: 200px; overflow-y: auto"
+        >
+          <el-submenu index="1">
+            <template slot="title">
+              <span>关于边坡功能</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item
+                index="1-1"
+                @click="apply(item)"
+                class="design-btn"
+                v-for="(item, index) in dataList"
+                :key="index"
+                >{{ item.name }}</el-menu-item
+              >
+              <el-menu-item @click="mapProject(1)" index="1-2"
+                >照片投射</el-menu-item
+              >
+              <el-menu-item @click="mapProject(0)" index="1-8"
+                >视频投射</el-menu-item
+              >
+              <el-menu-item @click="remove('data')" index="1-3"
+                >清除</el-menu-item
+              >
+              <el-menu-item @click="addDeviceIcon" index="1-4"
+                >设备分布</el-menu-item
+              >
+              <el-menu-item @click="remove('device')" index="1-5"
+                >清除</el-menu-item
+              >
+              <el-menu-item @click="showProblem('icon')" index="1-6"
+                >图标</el-menu-item
+              >
+              <el-menu-item @click="showProblem('heatmap')" index="1-7"
+                >热力图</el-menu-item
+              >
+              <el-menu-item @click="createDocx" index="1-8"
+                >导出文件</el-menu-item
+              >
+              <el-menu-item @click="remove('problem')" index="1-9"
+                >清除</el-menu-item
+              >
+            </el-menu-item-group>
+          </el-submenu>
+        </el-menu>
+      </el-col>
+    </el-row>
     <DataDrawer
       ref="drawer"
       :drawer="drawerVisible"
@@ -53,6 +65,7 @@
 <script>
 let init, draw, picking, popup, heatmap;
 import { saveAs } from "file-saver";
+import htmlDocx from "html-docx-js/dist/html-docx";
 import DataDrawer from "./son/dataDrawer.vue";
 import {
   dataList,
@@ -77,8 +90,25 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      init = new tqsdk.widgets.BackgroundData(window.viewer);
+      init = new tqsdk.widgets.BackgroundData(window.viewer, "cesiumContainer");
+      if (!popup) {
+        popup = new tqsdk.widgets.AirRoute.Popup({
+          id: "popid",
+          parentNode: undefined,
+          width: 100,
+          height: 50,
+          pixelOffset: {
+            x: 15,
+            y: -80,
+          },
+        });
+      }
+      draw = new tqsdk.scene.Interaction.Draw(window.viewer);
+      this.mapClick();
     });
+  },
+  destroyed() {
+    this.removeAll();
   },
   methods: {
     async apply(v) {
@@ -100,6 +130,22 @@ export default {
       this.drawerVisible = true;
       this.$refs.drawer.setActiveName(item);
     },
+    async showPanorama() {
+      let item = {
+        name: "720全景",
+        type: "panor",
+        id: "64d6de1a-9761-4dc7-a6f9-b71dd17771f44747",
+        isShow: false,
+        userId: "a4785bfe-7498-4a40-8f70-fadbad304729",
+        thumbnail: null,
+        info: {
+          url: require("../assets/image/全景1.jpg"),
+        },
+        //调节图层是色调，饱和度，亮度，对比度等
+        colorAdjust: undefined,
+      };
+      await init.addPanorama(item);
+    },
     async showDom(item) {
       let layer = await init.addCustomTileLayer(item, true);
       this.selectLayer = layer;
@@ -119,11 +165,7 @@ export default {
         window.viewer.flyTo(this.selectLayer.ly);
       } else if (this.selectLayer.datatype === "dom") {
         window.viewer.camera.flyTo({
-          destination: Cesium.Cartesian3.fromDegrees(
-            111.376399,
-            22.496896,
-            300
-          ),
+          destination: Cesium.Cartesian3.fromDegrees(126.61217, 43.7744, 1000),
         });
       }
     },
@@ -134,32 +176,32 @@ export default {
           url: require("../assets/image/1.jpg"),
           id: "1",
           alpha: 0.7,
-          heading: Number.parseFloat(-136.1),
-          pitch: Number.parseFloat(-89.9),
-          roll: Number.parseFloat(+180),
+          heading: Number.parseFloat(+50),
+          pitch: Number.parseFloat(-54.5),
+          roll: Number.parseFloat(+0.0),
           showFrustum: true,
           horizontal: 30,
           isEclosion: true,
-          vertical: (Number.parseFloat(5460) / Number.parseFloat(8192)) * 100,
+          vertical: (Number.parseFloat(2160) / Number.parseFloat(3840)) * 100,
           far: 1000,
           type: type,
           coor: {
-            lng: 111 + 22 / 60 + 31.43 / 3600,
-            lat: 22 + 29 / 60 + 44.74 / 3600,
-            alt: 559.8,
+            lng: 113 + 17 / 60 + 28.62 / 3600,
+            lat: 24 + 3 / 60 + 31.38 / 3600,
+            alt: 559.887,
           },
-          focalLength: 35,
-          with: 8192,
-          height: 5460,
+          focalLength: 4.4,
+          with: 3840,
+          height: 2160,
         };
       } else {
         params = {
           url: require("../assets/image/8.mp4"),
           id: "2",
           alpha: 0.7,
-          heading: Number.parseFloat(145),
-          pitch: Number.parseFloat(-60),
-          roll: Number.parseFloat(0),
+          heading: Number.parseFloat(110),
+          pitch: Number.parseFloat(-55),
+          roll: Number.parseFloat(10),
           showFrustum: true,
           horizontal: 20,
           isEclosion: true,
@@ -167,9 +209,9 @@ export default {
           far: 1000,
           type: type,
           coor: {
-            lng: 111.37654163,
-            lat: 22.49628785,
-            alt: 283.9,
+            lng: 113.29054,
+            lat: 24.059176,
+            alt: 113.982,
           },
           focalLength: 8.8,
           with: 3840,
@@ -249,16 +291,23 @@ export default {
             item.position[2]
           ),
           billboard: item.style.billboard,
-          label: item.style.label,
+          // label: item.style.label,
         });
         entity.type = item.type;
         entity.info = item.info;
         this.entities.device.push(entity);
       });
+      window.viewer.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(
+          113.221216344,
+          23.979189129,
+          34.69
+        ),
+      });
     },
     mapClick() {
       if (!picking) {
-        picking = new Picking(window.viewer);
+        picking = new tqsdk.scene.Interaction.Picking(window.viewer);
       }
       //左键单击
       picking.on("LEFT_CLICK", (e) => {
@@ -272,6 +321,7 @@ export default {
       });
     },
     initPop(options, screenPosition) {
+      console.log(111);
       let innerHTML = `
       <div><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
       <div><span class="title-t">编号：</span><span class="title-content">${options.number}</span></div>
@@ -305,6 +355,89 @@ export default {
         img.src = canvas.toDataURL();
       });
     },
+    async createDocx() {
+      let KZhuang = "K43+914";
+      let time = "2024/08/29 09:46:02";
+      let base64Url = await this.canvasToBase64(viewer.scene.canvas, 550, 250);
+
+      const htmlContent = `<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="Aspose.Words for .NET 15.1.0.0" />
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <h1
+        style="
+          font-size: 22pt;
+          line-height: 115%;
+          margin: 24pt 0pt 0pt;
+          page-break-after: avoid;
+          page-break-inside: avoid;
+          text-align: center;
+        "
+      >
+        <span
+          style="
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 60px;
+          "
+          >关于路段边坡巡检发现问题</span
+        >
+      </h1>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="font-size: 20px; font-weight: bold; line-height: 60px"
+          >一、名称:</span
+        >
+        <span style="font-family: 宋体; font-size: 12pt">
+           K43+914+500_填平区_刘屋互通CK0+207~308左侧
+          排水沟堵塞2024/05/24</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="font-size: 20px; font-weight: bold; line-height: 60px"
+          >二、问题概要</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="text-indent: 2em; margin: 10px 0"
+          >桩号：&nbsp;${KZhuang}</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="text-indent: 2em; margin: 10px 0"
+          >报告时间：&nbsp;${time}</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="font-size: 20px; font-weight: bold; line-height: 60px"
+          >三、报告内容</span
+        >
+      </p>
+      <p style="margin: 0pt 0pt 0pt 18pt">
+        <span style="text-indent: 2em; margin: 10px 0"
+          >巡视对象： K43+914+500_填平区_刘屋互通CK0+207~308左侧
+          严重程度：严重
+          巡查时间：2024年09月03日
+        
+         </span
+        >
+       <p style="text-align: center;margin-bottom: 20px">
+    <img src="${base64Url}" alt="" style='width:600px'></p>
+      </p>
+     
+    </div>
+  </body>
+</html>
+`;
+
+      this.exportHtmlToWord(htmlContent);
+    },
     showProblem(type) {
       if (type === "icon") {
         if (this.entities.problem.length) return;
@@ -317,7 +450,7 @@ export default {
             ),
             billboard: {
               color: Cesium.Color.fromCssColorString("#ffffff"),
-              image: require("../assets/image/problem.png"),
+              image: require("../assets/image/滑坡.png"),
               disableDepthTestDistance: 1e11,
               distanceDisplayCondition: new Cesium.DistanceDisplayCondition(
                 0,
@@ -333,23 +466,33 @@ export default {
           });
           this.entities.problem.push(entity);
         });
+        window.viewer.camera.setView({
+          destination: Cesium.Cartesian3.fromDegrees(
+            113.29447297,
+            24.06380792,
+            1000
+          ),
+        });
       } else if (type === "heatmap") {
         heatmap = new tqsdk.common.heatmap.Heatmap2D(
           window.viewer,
           heatmapoptions
         );
+        window.viewer.camera.setView({
+          destination: Cesium.Cartesian3.fromDegrees(
+            111.37421633,
+            22.49424891,
+            1000
+          ),
+        });
       }
     },
     exportHtmlToWord(htmlContent) {
       // 将 HTML 内容转换为 Blob 对象
       const blob = htmlDocx.asBlob(htmlContent);
-      saveAs(blob, "边坡巡检问题报告.docx");
+      saveAs(blob, "路段边坡巡检问题.docx");
     },
   },
 };
 </script>
-<style>
-.design-btn {
-  margin: 5px 8px;
-}
-</style>
+<style></style>
