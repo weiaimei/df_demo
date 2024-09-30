@@ -321,11 +321,12 @@ export default {
       });
     },
     initPop(options, screenPosition) {
-      console.log(111);
+      console.log(options, 111);
       let innerHTML = `
-      <div><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
+      <div style=' position: absolute;right:5px;top:60px; background: #fff'>
+        <div ><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
       <div><span class="title-t">编号：</span><span class="title-content">${options.number}</span></div>
-    
+      <div><span class="title-t">状态：</span><span class="title-content">${options.state}</span></div><div>
       `;
       popup.add(innerHTML, screenPosition);
     },
