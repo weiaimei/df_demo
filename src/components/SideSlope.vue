@@ -299,8 +299,8 @@ export default {
       });
       window.viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(
-          113.221263167,
-          23.978080651,
+          113.247389738,
+          23.997546491,
           1000
         ),
       });
@@ -323,7 +323,7 @@ export default {
     },
     initPop(options, screenPosition) {
       let innerHTML = `
-      <div style=' position: absolute;right:5px;top:60px; background: #fff'>
+      <div style=' position: absolute;right:5px;top:60px; background: #fff;width:300px'>
         <div ><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
       <div><span class="title-t">编号：</span><span class="title-content">${options.number}</span></div>
       <div><span class="title-t">状态：</span><span class="title-content">${options.state}</span></div><div>

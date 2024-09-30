@@ -60,11 +60,12 @@ export default {
 </script>
 <style scoped>
 .container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 #cesiumContainer {
-  width: 100%;
+  width: calc(100%-400px);
   height: 100%;
   overflow: hidden;
 }
@@ -95,6 +96,7 @@ export default {
   top: 60px;
   z-index: 3;
   height: 300px;
+  display: inline-block;
   /* overflow: scroll; */
 }
 .left-auto-scrollbar {

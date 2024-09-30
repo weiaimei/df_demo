@@ -90,14 +90,14 @@ let deviceList = [
   {
     type: "airPort",
     name: "机场",
-    position: [113.220893317, 23.981223014, 59.05],
+    position: [113.242763572, 23.997862547, 34.95],
     info: {
       name: "机场1",
-      number: "4TADKCM001004A",
+      number: "4TADKCM001004B",
       state: "在线",
       type: "D2",
       organize: "广州绯影",
-      position: "113.220893317, 23.981223014, 59.05",
+      position: "113.242763572, 23.997862547, 34.95",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -135,14 +135,14 @@ let deviceList = [
   {
     type: "airPort",
     name: "机场",
-    position: [113.220486408, 23.978634173, 35.31],
+    position: [113.246326912, 23.996720421, 46.09],
     info: {
       name: "机场2",
       number: "4TADKCM00K8B0000",
       state: "在线",
       type: "D1",
       organize: "广州绯影",
-      position: "113.220486408,23.978634173,35.31",
+      position: "113.246326912, 23.996720421, 46.09",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -180,14 +180,14 @@ let deviceList = [
   {
     type: "airFly",
     name: "无人机",
-    position: [113.220272, 23.980886, 62],
+    position: [113.244745887, 23.99866857, 29.3],
     info: {
       name: "无人机1",
       number: "1581F5BLD23130010HMR",
       state: "在线",
       type: "M30T",
       organize: "广州绯影",
-      position: "111.3782354, 22.49855643, 29.4",
+      position: "113.244745887,23.99866857,29.3",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -225,14 +225,14 @@ let deviceList = [
   {
     type: "airFly",
     name: "无人机",
-    position: [113.221216344, 23.979189129, 34.69],
+    position: [113.247389738, 23.997546491, 51.02],
     info: {
       name: "无人机2",
       number: "1581F5BLD231300DET45",
       state: "在线",
       type: "M30T",
       organize: "广州绯影",
-      position: "113.221216344,23.979189129,34.69",
+      position: "113.247389738,23.997546491,51.02",
       mader: "大疆",
       time: "2024-08-05 15:12:27",
     },
@@ -270,16 +270,16 @@ let deviceList = [
   {
     type: "video",
     name: "摄像枪",
-    position: [113.221774461, 23.980514493, 38.7],
+    position: [113.24637793, 23.99880478, 29.46],
     info: {
-      name: "K44 海康枪机摄像头1",
+      name: " 海康枪机摄像头1",
       number: "HKSXT001",
       state: "在线",
       type: "枪机摄像头",
       organize: "广州绯影",
       mader: "海康威视",
       time: "2024-08-05 15:12:27",
-      position: "113.221774461,23.980514493,38.7",
+      position: "113.24637793,23.99880478,29.46",
     },
     style: {
       billboard: {
@@ -315,16 +315,16 @@ let deviceList = [
   {
     type: "video",
     name: "摄像枪",
-    position: [113.218508172, 23.979674181, 46.15],
+    position: [113.244188504, 23.996530053, 45.27],
     info: {
-      name: "K44 海康枪机摄像头2",
+      name: "海康枪机摄像头2",
       number: "HKSXT002",
       state: "在线",
       type: "枪机摄像头",
       organize: "广州绯影",
       mader: "海康威视",
       time: "2024-08-05 15:12:27",
-      position: "113.218508172,23.979674181,46.15",
+      position: "113.244188504,23.996530053,45.27",
     },
     style: {
       billboard: {
