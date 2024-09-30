@@ -8,7 +8,7 @@ let dataList = [
     thumbnail: null,
     extent: [113.243634888, 22.0486139, 113.266673573, 22.053641056],
     info: {
-      url: " http://localhost:8003/tilesets/dom/{z}/{x}/{y}.png",
+      url: window.YANSSHIURL.dom,
       maximumLevel: 20,
     },
     //调节图层是色调，饱和度，亮度，对比度等
@@ -26,7 +26,7 @@ let dataList = [
     thumbnail: null,
     extent: [112.872307732, 22.02814342, 113.15425597, 22.038444698],
     info: {
-      url: "http://localhost:8003/tilesets/cad/{z}/{x}/{y}.png",
+      url: window.YANSSHIURL.cad,
     },
     //调节图层是色调，饱和度，亮度，对比度等
     colorAdjust: null,
@@ -45,7 +45,7 @@ let dataList = [
     thumbnail: null,
     extent: [113.401134, 22.70118805, 113.266375434, 22.053369711],
     info: {
-      url: "http://localhost:8003/tilesets/b3dm/tileset.json",
+      url: window.YANSSHIURL.tiles,
       maximumScreenSpaceError: 1,
     },
     //调节图层是色调，饱和度，亮度，对比度等
@@ -60,7 +60,7 @@ let dataList = [
     thumbnail: null,
     // extent: [113.401134, 22.70118805, 113.63540833, 22.8085079],
     info: {
-      url: "http://localhost:8003/tilesets/points/tileset.json",
+      url: window.YANSSHIURL.dianyun,
       maximumScreenSpaceError: 1,
     },
     //调节图层是色调，饱和度，亮度，对比度等

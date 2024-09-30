@@ -17,9 +17,24 @@
       >
     </noscript>
     <div id="app"></div>
+    <script>
+      //演示数据地址
+      const YANSSHIURL = {
+        dom: " http://192.168.2.85/test/%E9%A1%B9%E7%9B%AE/%E8%8F%B2%E5%BD%B1%E6%BC%94%E7%A4%BA/localhostWam/tilesets/dom/{z}/{x}/{y}.png", //正射
+        terraim: "", //地形
+        dianyun:
+          "http://192.168.2.85/test/%E9%A1%B9%E7%9B%AE/%E8%8F%B2%E5%BD%B1%E6%BC%94%E7%A4%BA/localhostWam/tilesets/points/tileset.json", //点云
+        tiles:
+          "http://192.168.2.85/test/%E9%A1%B9%E7%9B%AE/%E8%8F%B2%E5%BD%B1%E6%BC%94%E7%A4%BA/localhostWam/tilesets/b3dm/tileset.json", //三维模型
+        video:
+          "http://192.168.2.85/test/img/0786ba5d918aaf8f72dfefde13ceb25b.mp4", //视频
+        cad: "http://192.168.2.85/test/%E9%A1%B9%E7%9B%AE/%E8%8F%B2%E5%BD%B1%E6%BC%94%E7%A4%BA/localhostWam/tilesets/cad/{z}/{x}/{y}.png",
+      };
+      window.YANSSHIURL = YANSSHIURL;
+    </script>
+
     <!-- built files will be auto injected -->
     <script src="./Cesium//Cesium.js"></script>
-
     <script src="./sdk/tqEngine-1.0.2.min.js"></script>
   </body>
 </html>

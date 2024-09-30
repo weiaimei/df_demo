@@ -42,13 +42,11 @@ export default {
         requestRenderMode: false,
       });
       let layer = new tqsdk.layer.LayerCollection(window.viewer);
-      layer.add(tqsdk.layer.syGDLayer.addVectorImage());
+      layer.add(tqsdk.layer.syBingLayer.addImage());
       //加载火星地形
-      layer.add(
-        tqsdk.layer.syTerrainLayer.add({
-          url: "http://data.marsgis.cn/terrain",
-        })
-      );
+      // layer.add(tqsdk.layer.syTerrainLayer.add({
+      //   url:"http://data.marsgis.cn/terrain",
+      // }));
       // window.viewer.scene.screenSpaceCameraController.enableTilt = false; //禁止相机倾斜
     },
   },
@@ -64,9 +62,10 @@ export default {
 .container {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 #cesiumContainer {
-  width: 100%;
+  width: calc(100%-400px);
   height: 100%;
   overflow: hidden;
 }
@@ -96,10 +95,13 @@ export default {
   right: 25px;
   top: 60px;
   z-index: 3;
-  max-height: 500px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: 300px;
+  display: inline-block;
+  /* overflow: scroll; */
 }
-.left-side {
+.left-auto-scrollbar {
+  width: 300px;
+  height: 300px;
+  /* overflow: auto; 根据需要自动显示滚动条 */
 }
 </style>

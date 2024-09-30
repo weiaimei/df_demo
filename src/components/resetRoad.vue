@@ -18,7 +18,7 @@
                 >行车信息</el-menu-item
               >
               <el-menu-item @click="drawCarRoute" index="1-2"
-                >绘制路线</el-menu-item
+                >车辆漫游</el-menu-item
               >
               <el-menu-item @click="firstCarView" index="1-3"
                 >第一视角</el-menu-item
@@ -89,7 +89,16 @@ export default {
           name: "收费站",
           anchor: "POINT(112.9579219741 22.0163717172)",
         },
-        { id: 104 },
+        {
+          id: 107,
+          name: "门架",
+          anchor: "POINT(112.9218949377 22.0107771537)",
+        },
+        {
+          id: 109,
+          name: "门架",
+          anchor: "POINT(112.9304552195 22.0109557647)",
+        },
       ];
       this.ZDsID = [];
       let entityArr = [];
@@ -183,7 +192,7 @@ export default {
             showBackground: false,
             backgroundColor: Cesium.Color.GREEN.withAlpha(0.5),
             fillColor: Cesium.Color.RED,
-            show:false,
+            show: false,
           },
           billboard: {
             image: "./img/1.png",

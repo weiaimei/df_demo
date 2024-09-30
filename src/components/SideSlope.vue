@@ -8,7 +8,6 @@
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b"
-          style="height: 200px; overflow-y: auto"
         >
           <el-submenu index="1">
             <template slot="title">
@@ -146,6 +145,7 @@ export default {
       };
       await init.addPanorama(item);
     },
+
     async showDom(item) {
       let layer = await init.addCustomTileLayer(item, true);
       this.selectLayer = layer;
@@ -299,8 +299,8 @@ export default {
       });
       window.viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(
-          113.221263167,
-          23.978080651,
+          113.247389738,
+          23.997546491,
           1000
         ),
       });
@@ -322,16 +322,11 @@ export default {
       });
     },
     initPop(options, screenPosition) {
-      console.log(111);
       let innerHTML = `
-      <div><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
+      <div style=' position: absolute;right:5px;top:60px; background: #fff;width:300px'>
+        <div ><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
       <div><span class="title-t">编号：</span><span class="title-content">${options.number}</span></div>
-      <div><span class="title-t">状态：</span><span class="title-content">${options.state}</span></div>
-      <div><span class="title-t">组织：</span><span class="title-content">${options.organize}</span></div>
-      <div><span class="title-t">类型：</span><span class="title-content">${options.type}</span></div>
-      <div><span class="title-t">生产厂商：</span><span class="title-content">${options.mader}</span></div>
-      <div><span class="title-t">安装时间：</span><span class="title-content">${options.time}</span></div>
-      <div><span class="title-t">位置：</span><span class="title-content">${options.position}</span></div>
+      <div><span class="title-t">状态：</span><span class="title-content">${options.state}</span></div><div>
       `;
       popup.add(innerHTML, screenPosition);
     },
@@ -481,9 +476,9 @@ export default {
         );
         window.viewer.camera.setView({
           destination: Cesium.Cartesian3.fromDegrees(
-            113.204445121,
-            23.97592431,
-            46.27
+            113.247124524,
+            24.037958579,
+            1000
           ),
         });
       }

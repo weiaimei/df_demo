@@ -7,7 +7,7 @@
       @change="previewFile"
       class="operate-btn"
     >
-      导入
+      <span style="color: white">导入</span>
     </a-upload>
   </div>
 </template>
