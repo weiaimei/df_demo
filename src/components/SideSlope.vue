@@ -476,9 +476,9 @@ export default {
         );
         window.viewer.camera.setView({
           destination: Cesium.Cartesian3.fromDegrees(
-            113.204445121,
-            23.97592431,
-            46.27
+            113.247124524,
+            24.037958579,
+            1000
           ),
         });
       }
