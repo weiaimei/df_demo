@@ -11,9 +11,8 @@
   >
     <div class="inspect-data">
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane  name="photo">
+        <el-tab-pane name="photo">
           <div class="photo">
-          
             <el-image
               class="show-imgae"
               v-for="(item, index) in photoList"
@@ -25,7 +24,6 @@
             ></el-image>
           </div>
           <div class="video">
-          
             <el-image
               class="show-imgae"
               v-for="(item, index) in videoList"
@@ -38,15 +36,39 @@
             <i class="el-icon-video-play"></i>
           </div>
         </el-tab-pane>
-        <!-- <el-tab-pane label="视频" name="video"> </el-tab-pane> -->
+        <el-tab-pane label="视频" name="video">
+          <div class="photo">
+            <el-image
+              class="show-imgae"
+              v-for="(item, index) in photoList"
+              :key="index"
+              style="width: 150px; height: 150px"
+              :src="item.smallThumbnail"
+              fit="fill"
+              :preview-src-list="srcList"
+            ></el-image>
+          </div>
+          <div class="video">
+            <el-image
+              class="show-imgae"
+              v-for="(item, index) in videoList"
+              :key="index"
+              style="width: 150px; height: 150px"
+              :src="item.smallThumbnail"
+              fit="fill"
+              @click="playVideo(item)"
+            ></el-image>
+            <i class="el-icon-video-play"></i>
+          </div>
+        </el-tab-pane>
       </el-tabs>
     </div>
-    <!-- <div v-if="videoDialog">
+    <div v-if="videoDialog">
       <Video
         :dialogVisible="videoDialog"
         :videoInfo="videoInfo"
         @closeDialog="closeDialog"
-      /> -->
+      />
     </div>
   </el-drawer>
 </template>

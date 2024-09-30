@@ -8,7 +8,7 @@ let dataList = [
     thumbnail: null,
     extent: [113.243634888, 22.0486139, 113.266673573, 22.053641056],
     info: {
-      url: " http://localhost:8003/tilesets/dom/{z}/{x}/{y}.png",
+      url: " http://192.168.2.33:8003/tilesets/dom/{z}/{x}/{y}.png",
       maximumLevel: 20,
     },
     //调节图层是色调，饱和度，亮度，对比度等

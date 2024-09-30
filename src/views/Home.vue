@@ -95,11 +95,11 @@ export default {
   top: 60px;
   z-index: 3;
   height: 300px;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 .left-auto-scrollbar {
   width: 300px;
   height: 300px;
-  overflow: auto; /* 根据需要自动显示滚动条 */
+  /* overflow: auto; 根据需要自动显示滚动条 */
 }
 </style>
