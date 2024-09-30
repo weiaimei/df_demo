@@ -91,10 +91,12 @@ export default {
 .left {
   position: absolute;
   width: 300px;
-  left: 25px;
+  right: 25px;
   top: 60px;
-
   z-index: 3;
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .left-side {
 }
