@@ -325,12 +325,7 @@ export default {
       let innerHTML = `
       <div><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
       <div><span class="title-t">编号：</span><span class="title-content">${options.number}</span></div>
-      <div><span class="title-t">状态：</span><span class="title-content">${options.state}</span></div>
-      <div><span class="title-t">组织：</span><span class="title-content">${options.organize}</span></div>
-      <div><span class="title-t">类型：</span><span class="title-content">${options.type}</span></div>
-      <div><span class="title-t">生产厂商：</span><span class="title-content">${options.mader}</span></div>
-      <div><span class="title-t">安装时间：</span><span class="title-content">${options.time}</span></div>
-      <div><span class="title-t">位置：</span><span class="title-content">${options.position}</span></div>
+    
       `;
       popup.add(innerHTML, screenPosition);
     },
