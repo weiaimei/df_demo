@@ -7,7 +7,7 @@
     :modal="false"
     :before-close="handleClose"
     :wrapperClosable="false"
-    size="30%"
+    size="53%"
   >
     <div class="inspect-data">
       <el-tabs v-model="activeName" @tab-click="handleClick">
