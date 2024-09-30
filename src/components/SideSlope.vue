@@ -145,6 +145,7 @@ export default {
       };
       await init.addPanorama(item);
     },
+
     async showDom(item) {
       let layer = await init.addCustomTileLayer(item, true);
       this.selectLayer = layer;
@@ -321,7 +322,6 @@ export default {
       });
     },
     initPop(options, screenPosition) {
-      console.log(options, 111);
       let innerHTML = `
       <div style=' position: absolute;right:5px;top:60px; background: #fff'>
         <div ><span class="title-t">名称：</span><span class="title-content">${options.name}</span></div>
